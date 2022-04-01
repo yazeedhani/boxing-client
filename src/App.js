@@ -8,6 +8,7 @@ import AutoDismissAlert from './components/shared/AutoDismissAlert/AutoDismissAl
 import Header from './components/shared/Header'
 import RequireAuth from './components/shared/RequireAuth'
 import Home from './components/Home'
+import ShowBoxer from './components/boxers/ShowBoxer'
 import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
@@ -49,6 +50,10 @@ const App = () => {
 					path='/' 
 					element={<Home msgAlert={msgAlert} user={user} />} 
 				/>
+				<Route 
+					path='/boxers/:id' 
+					element={<ShowBoxer msgAlert={msgAlert} user={user} />} 
+				/>
 				<Route
 					path='/sign-up'
 					element={<SignUp msgAlert={msgAlert} setUser={setUser} />}
@@ -63,7 +68,7 @@ const App = () => {
 						<RequireAuth user={user}>
 						<SignOut msgAlert={msgAlert} clearUser={clearUser} user={user} />
 						</RequireAuth>
-				}
+					}
 				/>
 				<Route
 					path='/change-password'

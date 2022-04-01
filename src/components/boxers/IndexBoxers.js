@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getAllBoxers } from "../../api/boxers";
+import { Link } from "react-router-dom";
 
 const IndexBoxers = (props) => {
     const [boxers, setBoxers] = useState(null)
@@ -13,7 +14,7 @@ const IndexBoxers = (props) => {
             .catch(console.error)
     }, [])
 
-    
+    console.log('boxers ', boxers)
     //If boxers === null, meaning still waiting for a response from the API
     if(boxers === null)
     {
@@ -28,8 +29,10 @@ const IndexBoxers = (props) => {
 
     if(boxers.length > 0)
     {
-        boxersJsx = boxers.map( boxer => (
-            <li key={boxer._id}>{boxer.name}</li>
+        boxersJsx = boxers.map( (boxer) => (
+            <Link to={`/boxers/${boxer._id}`} key={boxer._id}>
+                <li key={boxer._id}>{boxer.name} {boxer._id}</li>
+            </Link>
         ))
     }
 

@@ -11,6 +11,18 @@ export const showOneBoxer = (boxerId) => {
     return axios(`${apiUrl}/boxers/${boxerId}`)
 }
 
+// POST -> Create function
+export const createBoxer = (boxer) => {
+    return axios({
+        url: `${apiUrl}/boxers`,
+        method: 'POST',
+        headers: {},
+        data: { boxer: boxer}
+    })
+}
+
+// PATCH -> Update function
+
 // DELETE -> Remove function
 export const removeBoxer = (boxerId) => {
     return axios({

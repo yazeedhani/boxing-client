@@ -9,6 +9,7 @@ import Header from './components/shared/Header'
 import RequireAuth from './components/shared/RequireAuth'
 import Home from './components/Home'
 import ShowBoxer from './components/boxers/ShowBoxer'
+import CreateBoxer from './components/boxers/CreateBoxer'
 import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
@@ -53,6 +54,10 @@ const App = () => {
 				<Route 
 					path='/boxers/:id' 
 					element={<ShowBoxer msgAlert={msgAlert} user={user} />} 
+				/>
+				<Route 
+					path='/addBoxer' 
+					element={<CreateBoxer msgAlert={msgAlert} user={user} />} 
 				/>
 				<Route
 					path='/sign-up'

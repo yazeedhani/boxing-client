@@ -37,11 +37,13 @@ const ShowBoxer = (props) => {
     console.log(boxer)
     return (
         <>
-            <p>Name: {boxer.name}</p>
-            <p>Record: {boxer.record}</p>
-            <p>Active: {boxer.active}</p>
-            <Button className="m-2" variant="warning">Edit Boxer</Button>
-            <Button onClick={() => removeTheBoxer()} className="m-2" variant="danger">Delete Boxer</Button>
+            <Container>
+                <p>Name: {boxer.name}</p>
+                <p>Record: {boxer.record}</p>
+                <p>Active: {boxer.active}</p>
+                <Button className="m-2" variant="warning">Edit Boxer</Button>
+                <Button onClick={() => removeTheBoxer()} className="m-2" variant="danger">Delete Boxer</Button>
+            </Container>
         </>
     )
 }

@@ -10,3 +10,13 @@ export const getAllBoxers = () => {
 export const showOneBoxer = (boxerId) => {
     return axios(`${apiUrl}/boxers/${boxerId}`)
 }
+
+// DELETE -> Remove function
+export const removeBoxer = (boxerId) => {
+    return axios({
+        url: `${apiUrl}/boxers/${boxerId}`,
+        method: 'DELETE',
+        headers: {},
+        data: { boxer: '' }
+    })
+}
